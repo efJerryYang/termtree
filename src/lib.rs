@@ -197,12 +197,28 @@ pub struct GlyphPalette {
 
 impl GlyphPalette {
     pub const fn new() -> Self {
+        Self::unicode()
+    }
+
+    pub const fn unicode() -> Self {
         Self {
             middle_item: "├",
             last_item: "└",
             item_indent: "── ",
 
             middle_skip: "│",
+            last_skip: " ",
+            skip_indent: "   ",
+        }
+    }
+
+    pub const fn ascii() -> Self {
+        Self {
+            middle_item: "|",
+            last_item: "`",
+            item_indent: "-- ",
+
+            middle_skip: "|",
             last_skip: " ",
             skip_indent: "   ",
         }
